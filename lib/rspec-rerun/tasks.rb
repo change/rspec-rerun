@@ -95,7 +95,6 @@ desc 'Re-run failed RSpec examples.'
 RSpec::Core::RakeTask.new('rspec-rerun:rerun') do |t, args|
   failing_specs = RSpec::Rerun::Tasks.failing_specs
 
-  t.pattern = 'deliberately-left-blank'
   t.fail_on_error = false
   t.verbose = false if args[:verbose] == false
   t.rspec_opts =  RSpec::Rerun::Tasks.rspec_options(args, failing_specs.join(' '))
